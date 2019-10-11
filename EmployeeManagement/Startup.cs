@@ -23,6 +23,7 @@ namespace EmployeeManagement
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,6 +61,7 @@ namespace EmployeeManagement
             //app.UseDefaultFiles(defaultFilesOptions);
             //app.UseStaticFiles();
 
+
             //--------------------------------------Using File Server Options---------------------------Part 12------------------------
             //FileServerOptions fileServerOptions = new FileServerOptions();
             //fileServerOptions.DefaultFilesOptions.DefaultFileNames.Clear();
@@ -68,7 +70,10 @@ namespace EmployeeManagement
 
 
 
-            app.UseSpaStaticFiles();
+            app.UseStaticFiles();
+            app.UseMvcWithDefaultRoute();
+
+
             app.Run(async (context) =>
             {
 
